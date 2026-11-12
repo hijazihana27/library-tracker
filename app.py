@@ -46,3 +46,13 @@ def search_books(keyword):
         return
     for i, book in enumerate(results, start=1):
         print(f"{i}. {book['title']} by {book['author']}")
+
+
+def remove_book(title):
+    books = load_books()
+    new_books = [b for b in books if b["title"].lower() != title.lower()]
+    if len(new_books) == len(books):
+        print("Book not found.")
+        return
+    save_books(new_books)
+    print(f"Removed: {title}")
