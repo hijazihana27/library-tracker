@@ -4,7 +4,7 @@ DATA_FILE = "books.json"
 
 
 def print_banner():
-    print("=== Library Tracker ===")
+    print("*** Welcome to Library Tracker (A) ***")
 
 
 def load_books():
