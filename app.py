@@ -18,3 +18,10 @@ def load_books():
 def save_books(books):
     with open(DATA_FILE, "w") as f:
         json.dump(books, f, indent=2)
+
+
+def add_book(title, author):
+    books = load_books()
+    books.append({"title": title, "author": author})
+    save_books(books)
+    print(f"Added: {title} by {author}")
