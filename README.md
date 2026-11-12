@@ -8,3 +8,6 @@ A small app to add, list, search and remove books.
 
 ## Usage
 Run python app.py
+
+## License
+MIT
