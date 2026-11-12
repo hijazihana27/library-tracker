@@ -35,3 +35,14 @@ def add_book(title, author):
     books.append({"title": title, "author": author})
     save_books(books)
     print(f"Added: {title} by {author}")
+
+
+def search_books(keyword):
+    books = load_books()
+    keyword = keyword.lower()
+    results = [b for b in books if keyword in b["title"].lower() or keyword in b["author"].lower()]
+    if not results:
+        print("No matching books.")
+        return
+    for i, book in enumerate(results, start=1):
+        print(f"{i}. {book['title']} by {book['author']}")
