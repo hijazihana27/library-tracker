@@ -25,3 +25,12 @@ def add_book(title, author):
     books.append({"title": title, "author": author})
     save_books(books)
     print(f"Added: {title} by {author}")
+
+
+def list_books():
+    books = load_books()
+    if not books:
+        print("No books yet.")
+        return
+    for i, book in enumerate(books, start=1):
+        print(f"{i}. {book['title']} by {book['author']}")
