@@ -27,10 +27,11 @@ def add_book(title, author):
     print(f"Added: {title} by {author}")
 
 
-def list_books():
-    books = load_books()
-    if not books:
-        print("No books yet.")
+def add_book(title, author):
+    if not title.strip():
+        print("Title cannot be empty.")
         return
-    for i, book in enumerate(books, start=1):
-        print(f"{i}. {book['title']} by {book['author']}")
+    books = load_books()
+    books.append({"title": title, "author": author})
+    save_books(books)
+    print(f"Added: {title} by {author}")
