@@ -50,6 +50,9 @@ def search_books(keyword):
 
 def remove_book(title):
     books = load_books()
+    if not books:
+        print("No books to remove.")
+        return
     new_books = [b for b in books if b["title"].lower() != title.lower()]
     if len(new_books) == len(books):
         print("Book not found.")
