@@ -56,3 +56,7 @@ def remove_book(title):
         return
     save_books(new_books)
     print(f"Removed: {title}")
+
+
+def search_and_remove_demo():
+    print("Use search_books(keyword) and remove_book(title)")
